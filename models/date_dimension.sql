@@ -1,7 +1,7 @@
 with cte as(
 select 
 
-to_timestamp(started_At) as started_At,
+to_timestamp(started_at) as started_at,
 date(to_timestamp(started_At)) as date_stated_At,
 hour(to_timestamp(started_At)) as hour_stated_At,
 
@@ -16,7 +16,7 @@ hour(to_timestamp(started_At)) as hour_stated_At,
 from 
 {{source('demo','bike')}}
 
-where started_At  != 'started_At'
+where started_At  != 'started_at'
 )
 
 select * from cte
